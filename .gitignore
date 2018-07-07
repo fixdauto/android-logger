@@ -1,0 +1,25 @@
+# OS X stuff
+.DS_Store
+
+# Android studio stuff
+.gradle/
+local.properties
+.idea/workspace.xml
+.idea/libraries/
+build/
+*.apk
+
+# Intellij stuff
+*.iml
+.idea
+
+# Keystore files
+*.jks
+
+fastlane/keys
+fastlane/report.xml
+fastlane/metadata
+
+.bundle
+vendor
+
