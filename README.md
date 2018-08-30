@@ -14,7 +14,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.github.fixdauto:android-logger:1.0.1'
+    implementation 'com.github.fixdauto:android-logger:v1.0.1'
 }
 ```
 
