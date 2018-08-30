@@ -2,17 +2,19 @@
 
 > FIXD Automotive's custom logger implementation
 
+[![](https://jitpack.io/v/fixdauto/android-logger.svg)](https://jitpack.io/#fixdauto/android-logger)
+
 ## Install
 
 ```groovy
 allprojects {
     repositories {
-        maven { url 'https://git.fixdapp.com/open-source/android-logger/raw/master/lib/repo' }
+        maven { url 'https://jitpack.io' }
     }
 }
 
 dependencies {
-    implementation 'com.fixdapp.android:logger:1.0.0'
+    implementation 'com.github.fixdauto:android-logger:1.0.1'
 }
 ```
 
