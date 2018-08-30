@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
 
 def currentVersionName = '1.0.0'
 
@@ -25,26 +24,4 @@ android {
 
 dependencies {
     api 'com.android.support:support-annotations:27.1.1'
-}
-
-task sourceJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier "sources"
-}
-
-publishing {
-    publications {
-        bar(MavenPublication) {
-            groupId 'com.fixdapp.android'
-            artifactId 'logger'
-            version currentVersionName
-            artifact(sourceJar)
-            artifact("$buildDir/outputs/aar/lib-release.aar")
-        }
-    }
-    repositories {
-        maven {
-            url "$projectDir/repo"
-        }
-    }
 }
