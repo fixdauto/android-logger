@@ -14,7 +14,7 @@ allprojects {
 }
 
 dependencies {
-    implementation 'com.github.fixdauto:android-logger:v1.0.1'
+    implementation 'com.github.fixdauto:android-logger:v1.0.2'
 }
 ```
 
@@ -75,8 +75,3 @@ val myTaggedLogger = LogManager.getInstance().getLogger().tag('custom-tag')
 ```
 
 If you need to pass a logger not connected to any endpoints, there's `NoOpLogger`.
-
-## Build
-
-        # don't forget to upate the version first!
-        ./gradlew clean build publish
