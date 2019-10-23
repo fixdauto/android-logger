@@ -1,7 +1,7 @@
 package com.fixdapp.android.logger;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -15,7 +15,8 @@ import java.util.Locale;
 
 public final class LogManager {
 
-    private static DateFormat DEFAULT_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
+    private static DateFormat DEFAULT_DATE_FORMAT
+            = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.US);
 
     private static LogManager instance;
 
@@ -102,14 +103,15 @@ public final class LogManager {
         return new LoggerInstance(this, tag);
     }
 
-    synchronized void handleLog(@Nullable String tag, int priority, @Nullable Throwable throwable, Object[] args) {
+    synchronized void handleLog(@Nullable String tag, int priority, @Nullable Throwable throwable,
+                                Object[] args) {
         Log log = new Log(tag, priority, throwable, args);
         if (!hasAddedEndpoints) {
             cachedLogs.add(log);
             return;
         }
         if (!hasFlushedCachedLogs) {
-            for(Log l : cachedLogs) {
+            for (Log l : cachedLogs) {
                 l.writeToEndpoints(endpoints, DEFAULT_DATE_FORMAT);
             }
             cachedLogs.clear();

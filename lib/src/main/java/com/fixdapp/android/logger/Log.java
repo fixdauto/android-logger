@@ -1,13 +1,13 @@
 package com.fixdapp.android.logger;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import java.text.DateFormat;
 import java.util.List;
 
 /**
  * Created by cjk on 2/6/18.
- *
+ * <p>
  * A container for individual log lines.
  */
 class Log {

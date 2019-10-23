@@ -1,8 +1,9 @@
 package com.fixdapp.android.logger;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -13,24 +14,31 @@ import java.io.StringWriter;
 public abstract class Logger {
 
     public abstract void v(@Nullable Object... args);
+
     public abstract void v(@NonNull Throwable t, @Nullable Object... args);
 
     public abstract void d(@Nullable Object... args);
+
     public abstract void d(@NonNull Throwable t, @Nullable Object... args);
 
     public abstract void i(@Nullable Object... args);
+
     public abstract void i(@NonNull Throwable t, @Nullable Object... args);
 
     public abstract void w(@Nullable Object... args);
+
     public abstract void w(@NonNull Throwable t, @Nullable Object... args);
 
     public abstract void e(@Nullable Object... args);
+
     public abstract void e(@NonNull Throwable t, @Nullable Object... args);
 
     public abstract void wtf(@Nullable Object... args);
+
     public abstract void wtf(@NonNull Throwable t, @Nullable Object... args);
 
     public abstract void log(int priority, @Nullable Object... args);
+
     public abstract void log(int priority, @NonNull Throwable t, @Nullable Object... args);
 
     public abstract Logger tag(String tag);
@@ -39,6 +47,7 @@ public abstract class Logger {
 
     /**
      * Convert a priority value into a string, e.g. `Log.VERBOSE` -> `"verbose"`.
+     *
      * @param priority one of the {@link Log} priority constants
      * @return a lowercase string representation of the priority
      */
@@ -64,6 +73,7 @@ public abstract class Logger {
 
     /**
      * Get the stack trace of a {@link Throwable} as a {@link String} for logging.
+     *
      * @param t the throwable in question. If null, will return an empty string.
      * @return a string representation of the stack trace
      */

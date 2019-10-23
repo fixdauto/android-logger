@@ -1,14 +1,15 @@
 package com.fixdapp.android.logger;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.text.DateFormat;
 
 /**
  * Created by cjk on 3/11/17.
- *
+ * <p>
  * An endpoint which uses Android Logcat ({@link Log}) as it's output.
  */
 public class DebugLoggerEndpoint implements LoggerEndpoint {
@@ -19,7 +20,8 @@ public class DebugLoggerEndpoint implements LoggerEndpoint {
 
     private boolean enabled = true;
 
-    public DebugLoggerEndpoint(int minimumPriority, @Nullable DateFormat dateFormat, @NonNull String[] ignoredTags) {
+    public DebugLoggerEndpoint(int minimumPriority, @Nullable DateFormat dateFormat,
+                               @NonNull String[] ignoredTags) {
         this.minimumPriority = minimumPriority;
         this.dateFormat = dateFormat;
         this.ignoredTags = ignoredTags;
@@ -49,8 +51,8 @@ public class DebugLoggerEndpoint implements LoggerEndpoint {
         if (ignoredTags.length == 0) {
             return false;
         }
-        for (int i = 0; i < ignoredTags.length; i++) {
-            if (tag.equals(ignoredTags[i])) {
+        for (String ignoredTag : ignoredTags) {
+            if (tag.equals(ignoredTag)) {
                 return true;
             }
         }
@@ -68,7 +70,8 @@ public class DebugLoggerEndpoint implements LoggerEndpoint {
 
     @Override
     public void log(@Nullable String tag, int priority, @NonNull String dateString,
-                    @NonNull String threadName, @NonNull String message, @Nullable Throwable throwable) {
+                    @NonNull String threadName, @NonNull String message,
+                    @Nullable Throwable throwable) {
 
         switch (priority) {
 

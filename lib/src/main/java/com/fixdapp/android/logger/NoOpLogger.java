@@ -1,7 +1,7 @@
 package com.fixdapp.android.logger;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * Created by cjk on 3/12/17.
